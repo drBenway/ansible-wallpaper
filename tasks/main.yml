@@ -1,8 +1,7 @@
 ---
 - name: download desktop into backgrounds folder
-  get_url:
-    url: https://raw.githubusercontent.com/drBenway/ansible-wallpaper/master/wallpaper.png
-    dest: ~/Pictures/wallpaper.png
-    mode: '0440'
+  command:
+    curl -o ~/Pictures/wallpaper.png https://raw.githubusercontent.com/drBenway/ansible-wallpaper/master/wallpaper.png
+  become: yes
 - name: set the background
   command: gsettings set org.cinnamon.desktop.background picture-uri 'file:///~/Pictures/wallpaper.png'
