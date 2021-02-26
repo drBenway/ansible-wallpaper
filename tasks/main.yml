@@ -1,7 +1,12 @@
 ---
+- name: Get users homedir
+  local_action: command echo ~
+  register: homedir
+- name: test
+  debug:
+    var: homedir
 - name: download desktop into backgrounds folder
   command:
-    curl -o ~/Pictures/wallpaper.png https://raw.githubusercontent.com/drBenway/ansible-wallpaper/master/wallpaper.png
-  become: yes
+    curl -o {{homedir}}/Pictures/wallpaper.png https://raw.githubusercontent.com/drBenway/ansible-wallpaper/master/wallpaper.png
 - name: set the background
   command: gsettings set org.cinnamon.desktop.background picture-uri 'file:///~/Pictures/wallpaper.png'
