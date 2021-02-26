@@ -1,7 +1,7 @@
 ---
 - name: download desktop into backgrounds folder
   get_url:
-    url: http://example.com/path/file.conf
+    url: https://raw.githubusercontent.com/drBenway/ansible-wallpaper/main/wallpaper.png
     dest: /usr/share/backgrounds/Nord/wallpaper.png
     mode: '0440'
 - name: set the background
