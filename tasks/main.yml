@@ -4,5 +4,6 @@
     url: https://raw.githubusercontent.com/drBenway/ansible-wallpaper/master/wallpaper.png
     dest: /usr/share/backgrounds/Nord/wallpaper.png
     mode: '0440'
+  become: yes
 - name: set the background
   command: gsettings set org.cinnamon.desktop.background picture-uri 'file:///usr/share/backgrounds/Nord/wallpaper.png'
