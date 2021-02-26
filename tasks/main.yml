@@ -9,4 +9,4 @@
   command:
     curl -o {{homedir.stdout}}/Pictures/wallpaper.png https://raw.githubusercontent.com/drBenway/ansible-wallpaper/master/wallpaper.png
 - name: set the background
-  command: gsettings set org.cinnamon.desktop.background picture-uri 'file:///~/Pictures/wallpaper.png'
+  command: gsettings set org.cinnamon.desktop.background picture-uri 'file:///{{homedir.stdout}}/Pictures/wallpaper.png'
